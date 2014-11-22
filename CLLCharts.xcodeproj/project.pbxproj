@@ -1,0 +1,478 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3D5CADA51A1FCCCE00814E08 /* ChartsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D5CADA41A1FCCCE00814E08 /* ChartsViewController.xib */; };
+		3DF1129C1A1EA09200AE762A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF1129B1A1EA09200AE762A /* AppDelegate.swift */; };
+		3DF1129E1A1EA09200AE762A /* ChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF1129D1A1EA09200AE762A /* ChartsViewController.swift */; };
+		3DF112A11A1EA09200AE762A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DF1129F1A1EA09200AE762A /* Main.storyboard */; };
+		3DF112A31A1EA09200AE762A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DF112A21A1EA09200AE762A /* Images.xcassets */; };
+		3DF112A61A1EA09200AE762A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DF112A41A1EA09200AE762A /* LaunchScreen.xib */; };
+		3DF112B21A1EA09200AE762A /* CLLChartsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF112B11A1EA09200AE762A /* CLLChartsTests.swift */; };
+		3DF112BD1A1EA19800AE762A /* CLLChartsLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF112BC1A1EA19800AE762A /* CLLChartsLine.swift */; };
+		3DF112BF1A1EC0AD00AE762A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF112BE1A1EC0AD00AE762A /* MainViewController.swift */; };
+		3DF112C31A1F75FD00AE762A /* CLLChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF112C21A1F75FD00AE762A /* CLLChart.swift */; };
+		3DF112C51A1F760E00AE762A /* CLLXAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF112C41A1F760E00AE762A /* CLLXAxis.swift */; };
+		3DF112C71A1F761800AE762A /* CLLYAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF112C61A1F761800AE762A /* CLLYAxis.swift */; };
+		3DF112C91A1F7A4600AE762A /* CLLAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF112C81A1F7A4600AE762A /* CLLAxis.swift */; };
+		3DF112CB1A1F869B00AE762A /* CLLLineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF112CA1A1F869B00AE762A /* CLLLineChart.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3DF112AC1A1EA09200AE762A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3DF1128E1A1EA09200AE762A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3DF112951A1EA09200AE762A;
+			remoteInfo = CLLCharts;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3D5CADA41A1FCCCE00814E08 /* ChartsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChartsViewController.xib; sourceTree = "<group>"; };
+		3DF112961A1EA09200AE762A /* CLLCharts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CLLCharts.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DF1129A1A1EA09200AE762A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3DF1129B1A1EA09200AE762A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3DF1129D1A1EA09200AE762A /* ChartsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsViewController.swift; sourceTree = "<group>"; };
+		3DF112A01A1EA09200AE762A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3DF112A21A1EA09200AE762A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		3DF112A51A1EA09200AE762A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		3DF112AB1A1EA09200AE762A /* CLLChartsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CLLChartsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DF112B01A1EA09200AE762A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3DF112B11A1EA09200AE762A /* CLLChartsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLChartsTests.swift; sourceTree = "<group>"; };
+		3DF112BC1A1EA19800AE762A /* CLLChartsLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLChartsLine.swift; sourceTree = "<group>"; };
+		3DF112BE1A1EC0AD00AE762A /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		3DF112C21A1F75FD00AE762A /* CLLChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLChart.swift; sourceTree = "<group>"; };
+		3DF112C41A1F760E00AE762A /* CLLXAxis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLXAxis.swift; sourceTree = "<group>"; };
+		3DF112C61A1F761800AE762A /* CLLYAxis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLYAxis.swift; sourceTree = "<group>"; };
+		3DF112C81A1F7A4600AE762A /* CLLAxis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLAxis.swift; sourceTree = "<group>"; };
+		3DF112CA1A1F869B00AE762A /* CLLLineChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLLineChart.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3DF112931A1EA09200AE762A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3DF112A81A1EA09200AE762A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3DF1128D1A1EA09200AE762A = {
+			isa = PBXGroup;
+			children = (
+				3DF112981A1EA09200AE762A /* CLLCharts */,
+				3DF112AE1A1EA09200AE762A /* CLLChartsTests */,
+				3DF112971A1EA09200AE762A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3DF112971A1EA09200AE762A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3DF112961A1EA09200AE762A /* CLLCharts.app */,
+				3DF112AB1A1EA09200AE762A /* CLLChartsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3DF112981A1EA09200AE762A /* CLLCharts */ = {
+			isa = PBXGroup;
+			children = (
+				3DF112C11A1F75EF00AE762A /* Chart */,
+				3DF1129B1A1EA09200AE762A /* AppDelegate.swift */,
+				3DF1129D1A1EA09200AE762A /* ChartsViewController.swift */,
+				3DF1129F1A1EA09200AE762A /* Main.storyboard */,
+				3DF112A21A1EA09200AE762A /* Images.xcassets */,
+				3DF112A41A1EA09200AE762A /* LaunchScreen.xib */,
+				3DF112991A1EA09200AE762A /* Supporting Files */,
+				3DF112BC1A1EA19800AE762A /* CLLChartsLine.swift */,
+				3DF112BE1A1EC0AD00AE762A /* MainViewController.swift */,
+				3D5CADA41A1FCCCE00814E08 /* ChartsViewController.xib */,
+			);
+			path = CLLCharts;
+			sourceTree = "<group>";
+		};
+		3DF112991A1EA09200AE762A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3DF1129A1A1EA09200AE762A /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3DF112AE1A1EA09200AE762A /* CLLChartsTests */ = {
+			isa = PBXGroup;
+			children = (
+				3DF112B11A1EA09200AE762A /* CLLChartsTests.swift */,
+				3DF112AF1A1EA09200AE762A /* Supporting Files */,
+			);
+			path = CLLChartsTests;
+			sourceTree = "<group>";
+		};
+		3DF112AF1A1EA09200AE762A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3DF112B01A1EA09200AE762A /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3DF112C11A1F75EF00AE762A /* Chart */ = {
+			isa = PBXGroup;
+			children = (
+				3DF112CD1A1F86B200AE762A /* Axii */,
+				3DF112CC1A1F86A600AE762A /* Chart */,
+			);
+			name = Chart;
+			sourceTree = "<group>";
+		};
+		3DF112CC1A1F86A600AE762A /* Chart */ = {
+			isa = PBXGroup;
+			children = (
+				3DF112C21A1F75FD00AE762A /* CLLChart.swift */,
+				3DF112CA1A1F869B00AE762A /* CLLLineChart.swift */,
+			);
+			name = Chart;
+			sourceTree = "<group>";
+		};
+		3DF112CD1A1F86B200AE762A /* Axii */ = {
+			isa = PBXGroup;
+			children = (
+				3DF112C41A1F760E00AE762A /* CLLXAxis.swift */,
+				3DF112C61A1F761800AE762A /* CLLYAxis.swift */,
+				3DF112C81A1F7A4600AE762A /* CLLAxis.swift */,
+			);
+			name = Axii;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3DF112951A1EA09200AE762A /* CLLCharts */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3DF112B51A1EA09200AE762A /* Build configuration list for PBXNativeTarget "CLLCharts" */;
+			buildPhases = (
+				3DF112921A1EA09200AE762A /* Sources */,
+				3DF112931A1EA09200AE762A /* Frameworks */,
+				3DF112941A1EA09200AE762A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CLLCharts;
+			productName = CLLCharts;
+			productReference = 3DF112961A1EA09200AE762A /* CLLCharts.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3DF112AA1A1EA09200AE762A /* CLLChartsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3DF112B81A1EA09200AE762A /* Build configuration list for PBXNativeTarget "CLLChartsTests" */;
+			buildPhases = (
+				3DF112A71A1EA09200AE762A /* Sources */,
+				3DF112A81A1EA09200AE762A /* Frameworks */,
+				3DF112A91A1EA09200AE762A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3DF112AD1A1EA09200AE762A /* PBXTargetDependency */,
+			);
+			name = CLLChartsTests;
+			productName = CLLChartsTests;
+			productReference = 3DF112AB1A1EA09200AE762A /* CLLChartsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3DF1128E1A1EA09200AE762A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = cll;
+				TargetAttributes = {
+					3DF112951A1EA09200AE762A = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					3DF112AA1A1EA09200AE762A = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = 3DF112951A1EA09200AE762A;
+					};
+				};
+			};
+			buildConfigurationList = 3DF112911A1EA09200AE762A /* Build configuration list for PBXProject "CLLCharts" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3DF1128D1A1EA09200AE762A;
+			productRefGroup = 3DF112971A1EA09200AE762A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3DF112951A1EA09200AE762A /* CLLCharts */,
+				3DF112AA1A1EA09200AE762A /* CLLChartsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3DF112941A1EA09200AE762A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DF112A11A1EA09200AE762A /* Main.storyboard in Resources */,
+				3D5CADA51A1FCCCE00814E08 /* ChartsViewController.xib in Resources */,
+				3DF112A61A1EA09200AE762A /* LaunchScreen.xib in Resources */,
+				3DF112A31A1EA09200AE762A /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3DF112A91A1EA09200AE762A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3DF112921A1EA09200AE762A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DF112C91A1F7A4600AE762A /* CLLAxis.swift in Sources */,
+				3DF112BD1A1EA19800AE762A /* CLLChartsLine.swift in Sources */,
+				3DF112C51A1F760E00AE762A /* CLLXAxis.swift in Sources */,
+				3DF112CB1A1F869B00AE762A /* CLLLineChart.swift in Sources */,
+				3DF1129E1A1EA09200AE762A /* ChartsViewController.swift in Sources */,
+				3DF112C31A1F75FD00AE762A /* CLLChart.swift in Sources */,
+				3DF1129C1A1EA09200AE762A /* AppDelegate.swift in Sources */,
+				3DF112C71A1F761800AE762A /* CLLYAxis.swift in Sources */,
+				3DF112BF1A1EC0AD00AE762A /* MainViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3DF112A71A1EA09200AE762A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DF112B21A1EA09200AE762A /* CLLChartsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3DF112AD1A1EA09200AE762A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3DF112951A1EA09200AE762A /* CLLCharts */;
+			targetProxy = 3DF112AC1A1EA09200AE762A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3DF1129F1A1EA09200AE762A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3DF112A01A1EA09200AE762A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3DF112A41A1EA09200AE762A /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3DF112A51A1EA09200AE762A /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3DF112B31A1EA09200AE762A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3DF112B41A1EA09200AE762A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3DF112B61A1EA09200AE762A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CLLCharts/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3DF112B71A1EA09200AE762A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CLLCharts/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		3DF112B91A1EA09200AE762A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = CLLChartsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CLLCharts.app/CLLCharts";
+			};
+			name = Debug;
+		};
+		3DF112BA1A1EA09200AE762A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = CLLChartsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CLLCharts.app/CLLCharts";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3DF112911A1EA09200AE762A /* Build configuration list for PBXProject "CLLCharts" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3DF112B31A1EA09200AE762A /* Debug */,
+				3DF112B41A1EA09200AE762A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3DF112B51A1EA09200AE762A /* Build configuration list for PBXNativeTarget "CLLCharts" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3DF112B61A1EA09200AE762A /* Debug */,
+				3DF112B71A1EA09200AE762A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3DF112B81A1EA09200AE762A /* Build configuration list for PBXNativeTarget "CLLChartsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3DF112B91A1EA09200AE762A /* Debug */,
+				3DF112BA1A1EA09200AE762A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3DF1128E1A1EA09200AE762A /* Project object */;
+}
