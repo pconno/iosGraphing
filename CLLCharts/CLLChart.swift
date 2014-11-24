@@ -27,21 +27,24 @@ class CLLChart : NSObject {
     }
     
     init(marginLeft : CGFloat, marginRight : CGFloat, marginTop : CGFloat, marginBottom: CGFloat, graphWidth : CGFloat, graphHeight : CGFloat, xScaleFactor : CGFloat, yScaleFactor : CGFloat, yAxisNum : CGFloat) {
-        xAxis = CLLXAxis(marginLeft: marginLeft, marginRight: marginRight, marginTop: marginTop, marginBottom: marginBottom, graphWidth: graphWidth, graphHeight: graphHeight, scaleFactor: xScaleFactor);
-        yAxis = CLLYAxis(marginLeft: marginLeft, marginRight: marginRight, marginTop: marginTop, marginBottom: marginBottom, graphWidth: graphWidth, graphHeight: graphHeight, scaleFactor: yScaleFactor, yAxisNum: yAxisNum
-        );
+        xAxis = CLLXAxis(marginLeft: marginLeft, marginRight: marginRight, marginTop: marginTop, marginBottom: marginBottom, graphWidth: graphWidth, graphHeight: graphHeight);
+        yAxis = CLLYAxis(marginLeft: marginLeft, marginRight: marginRight, marginTop: marginTop, marginBottom: marginBottom, graphWidth: graphWidth, graphHeight: graphHeight, yAxisNum: yAxisNum);
         yLabelView = UIView();
         xLabelView = UIView();
         yPadding = 0;
         super.init();
     }
     
+    func draw(view : UIView)
+    {
+        yLabelView = yAxis.addTicksToView(view);
+        xLabelView = xAxis.addTicksToView(view);
+    }
+    
     func drawAxii(view : UIView)
     {
-        view.layer.addSublayer(yAxis.drawAxis());
-        yLabelView = yAxis.addTicksToView(view);
+        yAxis.drawAxis(view);
         
-        view.layer.addSublayer(xAxis.drawAxis());
-        xLabelView = xAxis.addTicksToView(view);
+//        xAxis.drawAxis(view);
     }
 }

@@ -19,12 +19,12 @@ class CLLYAxis : CLLAxis {
         super.init();
     }
     
-    init(marginLeft : CGFloat, marginRight : CGFloat, marginTop : CGFloat, marginBottom: CGFloat, graphWidth : CGFloat, graphHeight : CGFloat, scaleFactor : CGFloat, yAxisNum : CGFloat) {
+    init(marginLeft : CGFloat, marginRight : CGFloat, marginTop : CGFloat, marginBottom: CGFloat, graphWidth : CGFloat, graphHeight : CGFloat, yAxisNum : CGFloat) {
         self.yAxisNum = yAxisNum;
-        super.init(marginLeft: marginLeft, marginRight: marginRight, marginTop: marginTop, marginBottom: marginBottom, graphWidth: graphWidth, graphHeight: graphHeight, scaleFactor: scaleFactor);
+        super.init(marginLeft: marginLeft, marginRight: marginRight, marginTop: marginTop, marginBottom: marginBottom, graphWidth: graphWidth, graphHeight: graphHeight);
     }
     
-    override func drawAxis() ->CAShapeLayer
+    override func drawAxis(view : UIView)
     {
         //Draw axis
         var bezPath: UIBezierPath = UIBezierPath();
@@ -37,15 +37,17 @@ class CLLYAxis : CLLAxis {
         layer.fillColor = fillColor;
         layer.strokeColor = strokeColor;
         
-        return layer;
-    }
-    
-    override func addTicksToView(view : UIView) ->UIView
-    {
+        view.layer.addSublayer(layer);
+        
+        var pathAnimation: CABasicAnimation = CABasicAnimation(keyPath: "strokeEnd")
+        pathAnimation.duration = 2;
+        pathAnimation.fromValue = 0.0;
+        pathAnimation.toValue = 1.0;
+        
+        layer.addAnimation(pathAnimation, forKey: "strokeEnd");
+        
+        //Draw all lines
         var tickInterval : CGFloat = graphHeight / CGFloat(self.ticks);
-        
-        var labelView = UIView(frame: CGRectMake(0, 0, view.frame.size.width, view.frame.size.height));
-        
         for index in 0...self.ticks
         {
             var bezPath: UIBezierPath = UIBezierPath();
@@ -69,6 +71,25 @@ class CLLYAxis : CLLAxis {
             layer.strokeColor = tickStrokeColor;
             
             view.layer.addSublayer(layer);
+            
+            var pathAnimation: CABasicAnimation = CABasicAnimation(keyPath: "strokeEnd")
+            pathAnimation.duration = 2;
+            pathAnimation.fromValue = 0.0;
+            pathAnimation.toValue = 1.0;
+            
+            layer.addAnimation(pathAnimation, forKey: "strokeEnd");
+        }
+    }
+    
+    override func addTicksToView(view : UIView) ->UIView
+    {
+        var tickInterval : CGFloat = graphHeight / CGFloat(self.ticks);
+        
+        var labelView = UIView(frame: CGRectMake(0, 0, view.frame.size.width, view.frame.size.height));
+        
+        for index in 0...self.ticks
+        {
+            var yVal: CGFloat = marginTop + CGFloat(CGFloat(index)*tickInterval);
             
             if index == self.ticks
             {

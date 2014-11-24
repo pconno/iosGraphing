@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol ChartsViewDelegate {
+    func touchedGraph(chart : ChartsViewController , val : CGFloat)
+    func touchedBar(chart : ChartsViewController , data : CLLBarOverlayData)
+}
+
 
 class ChartsViewController: UIViewController {
     
@@ -28,7 +33,12 @@ class ChartsViewController: UIViewController {
     var yPadding : CGFloat;
     var yAxisNum : CGFloat;
     
+    var drawBars : Bool;
+    
     var chart: CLLLineChart;
+    
+    var delegate: ChartsViewDelegate?;
+    var chartOverlay : CLLChartOverlayBars?
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         self.yPadding = 40;
@@ -45,7 +55,9 @@ class ChartsViewController: UIViewController {
         
         self.yPadding = 0;
         self.yAxisNum = 0;
+        self.drawBars = false
         chart = CLLLineChart();
+        
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil);
     }
 
@@ -55,7 +67,12 @@ class ChartsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        var panGesture = UIPanGestureRecognizer(target: self, action: Selector("handlePan:"))
+        self.view.addGestureRecognizer(panGesture)
+        
+        var tapGesture = UITapGestureRecognizer(target: self, action: Selector("handleTap:"))
+        self.view.addGestureRecognizer(tapGesture)
     }
     
     func setupGraph()
@@ -63,11 +80,20 @@ class ChartsViewController: UIViewController {
         self.graphWidth = self.view.frame.width - self.marginRight - self.marginLeft;
         self.graphHeight = self.view.frame.size.height - self.marginTop - self.marginBottom;
         
-        self.dataPointArray = normalizePoints(dataPointArray);
-        
         chart = CLLLineChart(marginLeft: marginLeft, marginRight: marginRight, marginTop: marginTop, marginBottom: marginBottom, graphWidth: graphWidth, graphHeight: graphHeight, xScaleFactor : xScaleFactor, yScaleFactor : yScaleFactor, yAxisNum : yAxisNum);
         chart.xAxis.ticks = 5;
         chart.yAxis.ticks = 5;
+    }
+    
+    func addChartOverlay(chartOverlay : CLLChartOverlayBars)
+    {
+        self.chartOverlay = chartOverlay
+        self.chartOverlay?.marginBottom = marginBottom
+        self.chartOverlay?.marginTop = marginTop
+        self.chartOverlay?.marginRight = marginRight
+        self.chartOverlay?.marginLeft = marginLeft
+        self.chartOverlay?.graphWidth = graphWidth
+        self.chartOverlay?.graphHeight = graphHeight
     }
 
     override func didReceiveMemoryWarning() {
@@ -77,16 +103,39 @@ class ChartsViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated);
-        chart.drawAxii(self.view);
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        drawPoints();
+        chart.drawAxii(self.view)
+        
+        let delay = 2 * Double(NSEC_PER_SEC)
+        let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+        
+        dispatch_after(time, dispatch_get_main_queue()) { () -> Void in
+            self.loadData();
+        };
+        
+    }
+    
+    func loadData()
+    {
+        self.dataPointArray = normalizePoints(dataPointArray);
+        chart.xAxis.scaleFactor = xScaleFactor
+        chart.yAxis.scaleFactor = yScaleFactor
+        self.chartOverlay?.scale = xScaleFactor
+        chart.draw(self.view);
+        var line = drawPoints();
+        
+        if self.chartOverlay != nil
+        {
+            self.chartOverlay?.drawInView(self.view)
+            chart.yLabelView.userInteractionEnabled = false
+        }
     }
         
     
-    func drawPoints()
+    func drawPoints() ->CALayer
     {
         var firstPoint: Bool = true;
         
@@ -121,6 +170,7 @@ class ChartsViewController: UIViewController {
         pathAnimation.toValue = 1.0;
         
         layer.addAnimation(pathAnimation, forKey: "strokeEnd");
+        return layer;
     }
     
     func normalizePoints(points : Array<CGPoint>)->Array<CGPoint>
@@ -166,12 +216,6 @@ class ChartsViewController: UIViewController {
         
         var scaledPoints :Array<CGPoint> = Array();
         
-//        var scaledPoint = self.graphHeight + self.marginTop - ((point.y - yAxisNum) * yScaleFactor);
-//        scaledPoint - self.graphHeight - self.marginTop = - ((point.y - yAxisNum) * yScaleFactor);
-//        self.marginTop + self.graphHeight - scaledPoint = ((point.y - yAxisNum) * yScaleFactor);
-//        point.y = ((self.marginTop + self.graphHeight - scaledPoint) / yScaleFactor) + yAxisNum
-        
-        
         for point: CGPoint in points{
             var xVal :CGFloat = (point.x * xScaleFactor) + self.marginLeft;
             var yVal : CGFloat = self.graphHeight + self.marginTop - ((point.y - yAxisNum) * yScaleFactor); //yVal needs to be the inverse bc of iOS coordinates
@@ -180,5 +224,53 @@ class ChartsViewController: UIViewController {
         
         return scaledPoints;
     }
+    
+    // we capture the touch move events by overriding touchesMoved method
+    
+    func touchedGraphAtPoint(point : CGPoint)
+    {
+        
+        //Take the x value and get the corresponding y value;
+        var xValue = point.x;
+        var yVal : CGFloat = 0;
+        for point : CGPoint in dataPointArray
+        {
+            if(point.x >= xValue)
+            {
+                yVal = point.y;
+                break;
+            }
+        }
+        
+        var originalVal = ((self.marginTop + self.graphHeight - yVal) / yScaleFactor) + yAxisNum;
+        delegate?.touchedGraph(self, val: originalVal);
+    }
+    
+    func handlePan(recognizer:UIPanGestureRecognizer)
+    {
+        var point : CGPoint = recognizer.locationInView(self.view)
+        
+        handleGesture(point)
+    }
+    
+    func handleTap(recognizer:UITapGestureRecognizer)
+    {        
+        var point : CGPoint = recognizer.locationInView(self.view)
+        
+        handleGesture(point)
+    }
+    
+    func handleGesture(point : CGPoint)
+    {
+        touchedGraphAtPoint(point)
+        
+        var data = chartOverlay?.touchAtPoint(point, view: self.view)
+        
+        if data != nil
+        {
+            delegate?.touchedBar(self, data: data!)
+        }
+    }
+    
 }
 

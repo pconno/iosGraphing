@@ -22,7 +22,7 @@ class CLLAxis : NSObject {
     var marginBottom : CGFloat;
     var graphHeight : CGFloat;
     var graphWidth : CGFloat;
-    var scaleFactor : CGFloat;
+    var scaleFactor : CGFloat!;
     
     var tickType : CLLTickType = CLLTickType.Outside;
     
@@ -53,7 +53,7 @@ class CLLAxis : NSObject {
         super.init();
     }
     
-    init(marginLeft : CGFloat, marginRight : CGFloat, marginTop : CGFloat, marginBottom: CGFloat, graphWidth : CGFloat, graphHeight : CGFloat, scaleFactor : CGFloat) {
+    init(marginLeft : CGFloat, marginRight : CGFloat, marginTop : CGFloat, marginBottom: CGFloat, graphWidth : CGFloat, graphHeight : CGFloat) {
         tickFormat = {
             (arg:Float) -> NSString in
             return ""
@@ -64,14 +64,12 @@ class CLLAxis : NSObject {
         self.marginBottom = marginBottom;
         self.graphWidth = graphWidth;
         self.graphHeight = graphHeight;
-        self.scaleFactor = scaleFactor;
         tickFont = UIFont(name: "Avenir", size: 9)!
         super.init();
     }
     
-    func drawAxis() ->CAShapeLayer
+    func drawAxis(view : UIView)
     {
-        return CAShapeLayer();
     }
     
     func addTicksToView(view : UIView) ->UIView

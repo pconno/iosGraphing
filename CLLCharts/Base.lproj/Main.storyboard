@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Main View Controller-->
@@ -15,11 +16,81 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6:54" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Zs-e8-lTy">
+                                <rect key="frame" x="540.5" y="35" width="33.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pace" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TbM-B1-GSt">
+                                <rect key="frame" x="16" y="35" width="40" height="20.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Justin Timberlake - Mirrors" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UhM-2o-CsR">
+                                <rect key="frame" x="237" y="36" width="126" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jtAlbum" translatesAutoresizingMaskIntoConstraints="NO" id="40c-Pq-geY">
+                                <rect key="frame" x="212" y="36" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="sK0-UF-hpD"/>
+                                    <constraint firstAttribute="width" constant="20" id="sSv-pp-G9M"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Elevation" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mju-tk-pHU">
+                                <rect key="frame" x="16" y="285" width="72.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="80 ft." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lCO-QY-nqc">
+                                <rect key="frame" x="534.5" y="285.5" width="39.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="TbM-B1-GSt" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="1id-so-Que"/>
+                            <constraint firstItem="UhM-2o-CsR" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="16" id="8oc-32-1sl"/>
+                            <constraint firstItem="lCO-QY-nqc" firstAttribute="centerY" secondItem="Mju-tk-pHU" secondAttribute="centerY" id="DN6-Ya-Vdu"/>
+                            <constraint firstItem="40c-Pq-geY" firstAttribute="centerY" secondItem="UhM-2o-CsR" secondAttribute="centerY" id="Gs1-F4-Qhk"/>
+                            <constraint firstItem="Mju-tk-pHU" firstAttribute="leading" secondItem="TbM-B1-GSt" secondAttribute="leading" id="PH4-f1-Ji3"/>
+                            <constraint firstItem="lCO-QY-nqc" firstAttribute="trailing" secondItem="0Zs-e8-lTy" secondAttribute="trailing" id="Qdf-en-Qc5"/>
+                            <constraint firstItem="UhM-2o-CsR" firstAttribute="leading" secondItem="40c-Pq-geY" secondAttribute="trailing" constant="5" id="RJ6-6a-ycv"/>
+                            <constraint firstItem="Mju-tk-pHU" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-1" id="RZk-Wq-ZvA"/>
+                            <constraint firstItem="0Zs-e8-lTy" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="15" id="TOO-y6-wN9"/>
+                            <constraint firstAttribute="centerX" secondItem="UhM-2o-CsR" secondAttribute="centerX" id="WQg-8p-yIT"/>
+                            <constraint firstItem="Mju-tk-pHU" firstAttribute="top" secondItem="TbM-B1-GSt" secondAttribute="bottom" constant="230" id="eF3-CR-hM2"/>
+                            <constraint firstItem="TbM-B1-GSt" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="15" id="naO-gb-fQG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0Zs-e8-lTy" secondAttribute="trailing" constant="10" id="u2U-U0-2Nv"/>
+                            <constraint firstItem="40c-Pq-geY" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="16" id="x2G-cQ-vTH"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="RZk-Wq-ZvA"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="albumImage" destination="40c-Pq-geY" id="tq8-no-7yn"/>
+                        <outlet property="elevationLabel" destination="lCO-QY-nqc" id="skj-SQ-WiZ"/>
+                        <outlet property="paceLabel" destination="0Zs-e8-lTy" id="HFI-qe-z1u"/>
+                        <outlet property="songLabel" destination="UhM-2o-CsR" id="R1F-hg-ebB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="288" y="304"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="jtAlbum" width="20" height="20"/>
+    </resources>
 </document>

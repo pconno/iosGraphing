@@ -11,7 +11,7 @@ import UIKit
 
 class CLLXAxis : CLLAxis {
         
-    override func drawAxis() ->CAShapeLayer
+    override func drawAxis(view : UIView)
     {
         var bezPath: UIBezierPath = UIBezierPath();
         bezPath.moveToPoint(CGPointMake(marginLeft, graphHeight + marginTop));
@@ -23,14 +23,14 @@ class CLLXAxis : CLLAxis {
         layer.fillColor = fillColor;
         layer.strokeColor = strokeColor;
         
-        return layer;
+        view.layer.addSublayer(layer);
     }
     
     override func addTicksToView(view : UIView) ->UIView
     {
         var tickInterval : CGFloat = graphWidth / CGFloat(self.ticks);
         
-        var labelView = UIView(frame: CGRectMake(0, 0, view.frame.size.width, view.frame.size.height));
+        var labelView = UIView(frame: CGRectMake(0, 0, view.frame.size.width, 20));
         
         for index in 0...self.ticks
         {

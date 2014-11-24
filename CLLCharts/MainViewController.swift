@@ -8,17 +8,25 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, ChartsViewDelegate {
+    @IBOutlet var paceLabel: UILabel!
+    @IBOutlet var songLabel: UILabel!
+    @IBOutlet var albumImage: UIImageView!
+    @IBOutlet var elevationLabel: UILabel!
+    
+    var paceChartsVC : ChartsViewController!
+    var elevationChartsVC : ChartsViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad();
         
-        var paceChartsVC = ChartsViewController(nibName: "ChartsViewController", bundle: NSBundle.mainBundle());
-        paceChartsVC.view.frame = CGRectMake(0, 40, 320, 160);
+        paceChartsVC = ChartsViewController(nibName: "ChartsViewController", bundle: NSBundle.mainBundle());
+        paceChartsVC.view.frame = CGRectMake(0, 70, 320, 160);
         paceChartsVC.dataPointArray = addPointsPaceByDistance();
         paceChartsVC.yPadding = 30;
         
         paceChartsVC.setupGraph();
+        paceChartsVC.addChartOverlay(CLLChartOverlayBars())
         paceChartsVC.chart.yAxis.strokeColor = UIColor.clearColor().CGColor;
         paceChartsVC.chart.yAxis.fillColor = UIColor(red: 0.91015625, green: 0.91015625, blue: 0.91015625, alpha: 0.7).CGColor;
         paceChartsVC.chart.yAxis.tickFillColor = UIColor(red: 0.91015625, green: 0.91015625, blue: 0.91015625, alpha: 0.7).CGColor;
@@ -41,6 +49,10 @@ class MainViewController: UIViewController {
             return self.milesFromMeters(arg);
         }
         
+        paceChartsVC.delegate = self;
+        
+        paceChartsVC.chartOverlay?.dataSet = createMusicDataSet()
+        
         self.addChildViewController(paceChartsVC);
         
         self.view.addSubview(paceChartsVC.view);
@@ -50,8 +62,8 @@ class MainViewController: UIViewController {
     
     func addElevationChart()
     {
-        var elevationChartsVC = ChartsViewController(nibName: "ChartsViewController", bundle: NSBundle.mainBundle());
-        elevationChartsVC.view.frame = CGRectMake(0, 220, 320, 160);
+        elevationChartsVC = ChartsViewController(nibName: "ChartsViewController", bundle: NSBundle.mainBundle());
+        elevationChartsVC.view.frame = CGRectMake(0, 320, 320, 160);
         elevationChartsVC.dataPointArray = addPointsElevationByDistance();
         elevationChartsVC.yPadding = 0;
         
@@ -77,6 +89,8 @@ class MainViewController: UIViewController {
             (arg:Float) -> NSString in
             return self.milesFromMeters(arg);
         }
+        
+        elevationChartsVC.delegate = self;
         
         self.addChildViewController(elevationChartsVC);
         
@@ -120,6 +134,48 @@ class MainViewController: UIViewController {
         {
             return NSString(format: "%0.f",time);
         }
+    }
+    
+    func touchedGraph(chart : ChartsViewController ,val : CGFloat)
+    {
+        if(chart.isEqual(paceChartsVC))
+        {
+            paceLabel.text = self.durationFormat(Float(val));
+        }
+        else if(chart.isEqual(elevationChartsVC))
+        {
+            elevationLabel.text = self.elevationFormat(Float(val));
+        }
+    }
+    
+    func touchedBar(chart : ChartsViewController , data : CLLBarOverlayData)
+    {
+        songLabel.text = NSString(format: "%@ - %@", data.data["artist"] as NSString , data.data["title"] as NSString)
+        showSong(true)
+    }
+
+    func showSong(show : Bool)
+    {
+        self.songLabel.hidden = !show
+        self.albumImage.hidden = !show
+    }
+    
+    func createMusicDataSet() ->NSArray
+    {
+        var points : NSMutableArray = NSMutableArray();
+        
+        points.addObject(CLLBarOverlayData(x: 0, data: ["title" : "Wicked Twisted Road", "artist" : "Reckless Kelly"]))
+        points.addObject(CLLBarOverlayData(x: 800, data: ["title" : "Texas and Tennese", "artist" : "Lucero"]))
+        points.addObject(CLLBarOverlayData(x: 2000, data: ["title" : "7 & 7", "artist" : "Turnpike Troubadors"]))
+        points.addObject(CLLBarOverlayData(x: 3000, data: ["title" : "Down on Washington", "artist" : "Turnpike Troubadors"]))
+        points.addObject(CLLBarOverlayData(x: 3400, data: ["title" : "1968", "artist" : "Turnpike Troubadors"]))
+        points.addObject(CLLBarOverlayData(x: 4000, data: ["title" : "Pompeii", "artist" : "Bastille"]))
+        points.addObject(CLLBarOverlayData(x: 5000, data: ["title" : "Happy", "artist" : "Pharrell Williams"]))
+        points.addObject(CLLBarOverlayData(x: 5300, data: ["title" : "Shreveport", "artist" : "Turnpike Troubadors"]))
+        points.addObject(CLLBarOverlayData(x: 6200, data: ["title" : "Billy Jean", "artist" : "Michael Jackson"]))
+        points.addObject(CLLBarOverlayData(x: 7700, data: ["title" : "Diamonds & Gasoline", "artist" : "Turnpike Troubadors"]))
+        
+        return points
     }
     
     func addPointsPaceByDuration() ->Array<CGPoint>{
