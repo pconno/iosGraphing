@@ -36,23 +36,7 @@ class CLLAxis : NSObject {
     var tickFont : UIFont;
     
     var tickFormat: (value: Float) -> (NSString);
-    
-    override init(){
-        tickFormat = {
-            (arg:Float) -> NSString in
-            return ""
-        }
-        self.marginLeft = 0;
-        self.marginRight = 0;
-        self.marginTop = 0;
-        self.marginBottom = 0;
-        self.graphWidth = 0;
-        self.graphHeight = 0;
-        self.scaleFactor = 0;
-        tickFont = UIFont(name: "Avenir", size: 9)!
-        super.init();
-    }
-    
+        
     init(marginLeft : CGFloat, marginRight : CGFloat, marginTop : CGFloat, marginBottom: CGFloat, graphWidth : CGFloat, graphHeight : CGFloat) {
         tickFormat = {
             (arg:Float) -> NSString in

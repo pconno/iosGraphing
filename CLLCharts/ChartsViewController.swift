@@ -13,25 +13,24 @@ protocol ChartsViewDelegate {
     func touchedBar(chart : ChartsViewController , data : CLLBarOverlayData)
 }
 
-
 class ChartsViewController: UIViewController {
     
     var dataPointArray: Array<CGPoint> = [];
-    var marginLeft: CGFloat = 20.0;
-    var marginRight: CGFloat = 20.0;
-    var marginTop: CGFloat = 5.0;
-    var marginBottom: CGFloat = 5.0;
-    var graphWidth: CGFloat = 0.0;
-    var graphHeight: CGFloat = 0.0;
+    var marginLeft: CGFloat
+    var marginRight: CGFloat
+    var marginTop: CGFloat
+    var marginBottom: CGFloat
+    var graphWidth: CGFloat
+    var graphHeight: CGFloat
     
     //Graph variables 
-    var xScaleFactor: CGFloat = 0.0;
-    var yScaleFactor: CGFloat = 0.0;
-    var xRange: CGFloat = 0.0;
-    var yRange: CGFloat = 0.0;
+    var xScaleFactor: CGFloat?
+    var yScaleFactor: CGFloat?
+    var xRange: CGFloat?
+    var yRange: CGFloat?
     
     var yPadding : CGFloat;
-    var yAxisNum : CGFloat;
+    var yAxisNum : CGFloat?;
     
     var drawBars : Bool;
     
@@ -40,29 +39,41 @@ class ChartsViewController: UIViewController {
     var delegate: ChartsViewDelegate?;
     var chartOverlay : CLLChartOverlayBars?
     
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
-        self.yPadding = 40;
-        self.marginLeft = 20.0;
-        self.marginRight = 20.0;
-        self.marginTop = 5.0;
-        self.marginBottom = 5.0;
-        self.graphWidth = 0.0;
-        self.graphHeight = 0.0;
-        self.xScaleFactor = 0.0;
-        self.yScaleFactor  = 0.0;
-        self.xRange = 0.0;
-        self.yRange = 0.0;
-        
-        self.yPadding = 0;
-        self.yAxisNum = 0;
-        self.drawBars = false
-        chart = CLLLineChart();
-        
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil);
+    convenience init(frame : CGRect)
+    {
+        self.init(rect: frame,marginLeft : 20, marginRight : 20, marginTop : 5, marginBottom : 5, graphWidth: 300, graphHeight : 160, yPadding : 0)
     }
+    
+    init(rect : CGRect, marginLeft : CGFloat, marginRight : CGFloat, marginTop : CGFloat, marginBottom : CGFloat, graphWidth : CGFloat, graphHeight : CGFloat, yPadding : CGFloat)
+    {
+        self.yPadding = yPadding;
+        self.marginLeft = marginLeft
+        self.marginRight = marginRight
+        self.marginTop = marginTop;
+        self.marginBottom = marginBottom;
+        self.graphWidth = graphWidth;
+        self.graphHeight = graphHeight;
+        
+        self.yPadding = yPadding;
+        self.drawBars = false
+        
+        chart = CLLLineChart(marginLeft: marginLeft, marginRight: marginRight, marginTop: marginTop, marginBottom: marginBottom, graphWidth: graphWidth, graphHeight: graphHeight);
+        
+        
+        self.graphWidth = rect.width - self.marginRight - self.marginLeft;
+        self.graphHeight = rect.size.height - self.marginTop - self.marginBottom;
+        
+        super.init(nibName: nil, bundle: nil);
+        
+        self.view.frame = rect
+        
+        chart.xAxis.ticks = 5;
+        chart.yAxis.ticks = 5;
+    }
+    
 
     required init(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError("NSCoding not supported")
     }
     
     override func viewDidLoad() {
@@ -73,16 +84,6 @@ class ChartsViewController: UIViewController {
         
         var tapGesture = UITapGestureRecognizer(target: self, action: Selector("handleTap:"))
         self.view.addGestureRecognizer(tapGesture)
-    }
-    
-    func setupGraph()
-    {
-        self.graphWidth = self.view.frame.width - self.marginRight - self.marginLeft;
-        self.graphHeight = self.view.frame.size.height - self.marginTop - self.marginBottom;
-        
-        chart = CLLLineChart(marginLeft: marginLeft, marginRight: marginRight, marginTop: marginTop, marginBottom: marginBottom, graphWidth: graphWidth, graphHeight: graphHeight, xScaleFactor : xScaleFactor, yScaleFactor : yScaleFactor, yAxisNum : yAxisNum);
-        chart.xAxis.ticks = 5;
-        chart.yAxis.ticks = 5;
     }
     
     func addChartOverlay(chartOverlay : CLLChartOverlayBars)
@@ -211,14 +212,14 @@ class ChartsViewController: UIViewController {
         self.xRange = maxX - minX;
         self.yRange = maxY - minY;
         
-        self.xScaleFactor = self.graphWidth / self.xRange
-        self.yScaleFactor = self.graphHeight / self.yRange
+        self.xScaleFactor = self.graphWidth / self.xRange!
+        self.yScaleFactor = self.graphHeight / self.yRange!
         
         var scaledPoints :Array<CGPoint> = Array();
         
         for point: CGPoint in points{
-            var xVal :CGFloat = (point.x * xScaleFactor) + self.marginLeft;
-            var yVal : CGFloat = self.graphHeight + self.marginTop - ((point.y - yAxisNum) * yScaleFactor); //yVal needs to be the inverse bc of iOS coordinates
+            var xVal :CGFloat = (point.x * xScaleFactor!) + self.marginLeft;
+            var yVal : CGFloat = self.graphHeight + self.marginTop - ((point.y - yAxisNum!) * yScaleFactor!); //yVal needs to be the inverse bc of iOS coordinates
             scaledPoints.append(CGPointMake(xVal,yVal));
         }
         
@@ -242,7 +243,7 @@ class ChartsViewController: UIViewController {
             }
         }
         
-        var originalVal = ((self.marginTop + self.graphHeight - yVal) / yScaleFactor) + yAxisNum;
+        var originalVal = ((self.marginTop + self.graphHeight - yVal) / yScaleFactor!) + yAxisNum!;
         delegate?.touchedGraph(self, val: originalVal);
     }
     

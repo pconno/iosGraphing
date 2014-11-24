@@ -11,18 +11,7 @@ import UIKit
 
 class CLLYAxis : CLLAxis {
     
-    var yAxisNum : CGFloat;
-    
-    override init()
-    {
-        yAxisNum = 0;
-        super.init();
-    }
-    
-    init(marginLeft : CGFloat, marginRight : CGFloat, marginTop : CGFloat, marginBottom: CGFloat, graphWidth : CGFloat, graphHeight : CGFloat, yAxisNum : CGFloat) {
-        self.yAxisNum = yAxisNum;
-        super.init(marginLeft: marginLeft, marginRight: marginRight, marginTop: marginTop, marginBottom: marginBottom, graphWidth: graphWidth, graphHeight: graphHeight);
-    }
+    var yAxisNum : CGFloat = 0;
     
     override func drawAxis(view : UIView)
     {

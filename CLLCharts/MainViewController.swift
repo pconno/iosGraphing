@@ -20,13 +20,21 @@ class MainViewController: UIViewController, ChartsViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad();
         
-        paceChartsVC = ChartsViewController(nibName: "ChartsViewController", bundle: NSBundle.mainBundle());
-        paceChartsVC.view.frame = CGRectMake(0, 70, 320, 160);
+        addPaceChart()
+        
+        addElevationChart()
+    }
+    
+    func addPaceChart()
+    {
+        paceChartsVC = ChartsViewController(frame: CGRectMake(0, 70, 320, 160));
+//        paceChartsVC.view.frame = CGRectMake(0, 70, 320, 160);
         paceChartsVC.dataPointArray = addPointsPaceByDistance();
         paceChartsVC.yPadding = 30;
         
-        paceChartsVC.setupGraph();
         paceChartsVC.addChartOverlay(CLLChartOverlayBars())
+        
+        //Set custom colors for chart -- Not necessary as all charts will have defaults
         paceChartsVC.chart.yAxis.strokeColor = UIColor.clearColor().CGColor;
         paceChartsVC.chart.yAxis.fillColor = UIColor(red: 0.91015625, green: 0.91015625, blue: 0.91015625, alpha: 0.7).CGColor;
         paceChartsVC.chart.yAxis.tickFillColor = UIColor(red: 0.91015625, green: 0.91015625, blue: 0.91015625, alpha: 0.7).CGColor;
@@ -56,18 +64,15 @@ class MainViewController: UIViewController, ChartsViewDelegate {
         self.addChildViewController(paceChartsVC);
         
         self.view.addSubview(paceChartsVC.view);
-        
-        addElevationChart()
     }
     
     func addElevationChart()
     {
-        elevationChartsVC = ChartsViewController(nibName: "ChartsViewController", bundle: NSBundle.mainBundle());
-        elevationChartsVC.view.frame = CGRectMake(0, 320, 320, 160);
+        elevationChartsVC = ChartsViewController(frame: CGRectMake(0, 320, 320, 160));
+//        elevationChartsVC.view.frame = CGRectMake(0, 320, 320, 160);
         elevationChartsVC.dataPointArray = addPointsElevationByDistance();
         elevationChartsVC.yPadding = 0;
         
-        elevationChartsVC.setupGraph();
         elevationChartsVC.chart.yAxis.strokeColor = UIColor.clearColor().CGColor;
         elevationChartsVC.chart.yAxis.fillColor = UIColor(red: 0.91015625, green: 0.91015625, blue: 0.91015625, alpha: 0.7).CGColor;
         elevationChartsVC.chart.yAxis.tickFillColor = UIColor(red: 0.91015625, green: 0.91015625, blue: 0.91015625, alpha: 0.7).CGColor;

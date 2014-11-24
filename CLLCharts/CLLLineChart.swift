@@ -14,14 +14,9 @@ class CLLLineChart : CLLChart {
     var lineFillColor : CGColor = UIColor.clearColor().CGColor;
     var lineStrokeColor : CGColor = UIColor.blueColor().CGColor;
     
-    override init()
-    {
-        super.init();
-    }
-    
-    override init(marginLeft : CGFloat, marginRight : CGFloat, marginTop : CGFloat, marginBottom: CGFloat, graphWidth : CGFloat, graphHeight : CGFloat, xScaleFactor : CGFloat, yScaleFactor : CGFloat, yAxisNum : CGFloat) {
+    override init(marginLeft : CGFloat, marginRight : CGFloat, marginTop : CGFloat, marginBottom: CGFloat, graphWidth : CGFloat, graphHeight : CGFloat) {
         
-        super.init(marginLeft: marginLeft, marginRight: marginRight, marginTop: marginTop, marginBottom: marginBottom, graphWidth: graphWidth, graphHeight: graphHeight, xScaleFactor: xScaleFactor, yScaleFactor: yScaleFactor, yAxisNum: yAxisNum);
+        super.init(marginLeft: marginLeft, marginRight: marginRight, marginTop: marginTop, marginBottom: marginBottom, graphWidth: graphWidth, graphHeight: graphHeight);
     }
     
 }

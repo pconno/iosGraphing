@@ -16,19 +16,9 @@ class CLLChart : NSObject {
     var xLabelView : UIView;
     var yPadding : CGFloat;
     
-    override init()
-    {
-        xAxis = CLLXAxis();
-        yAxis = CLLYAxis();
-        yLabelView = UIView();
-        xLabelView = UIView();
-        yPadding = 0;
-        super.init();
-    }
-    
-    init(marginLeft : CGFloat, marginRight : CGFloat, marginTop : CGFloat, marginBottom: CGFloat, graphWidth : CGFloat, graphHeight : CGFloat, xScaleFactor : CGFloat, yScaleFactor : CGFloat, yAxisNum : CGFloat) {
+    init(marginLeft : CGFloat, marginRight : CGFloat, marginTop : CGFloat, marginBottom: CGFloat, graphWidth : CGFloat, graphHeight : CGFloat) {
         xAxis = CLLXAxis(marginLeft: marginLeft, marginRight: marginRight, marginTop: marginTop, marginBottom: marginBottom, graphWidth: graphWidth, graphHeight: graphHeight);
-        yAxis = CLLYAxis(marginLeft: marginLeft, marginRight: marginRight, marginTop: marginTop, marginBottom: marginBottom, graphWidth: graphWidth, graphHeight: graphHeight, yAxisNum: yAxisNum);
+        yAxis = CLLYAxis(marginLeft: marginLeft, marginRight: marginRight, marginTop: marginTop, marginBottom: marginBottom, graphWidth: graphWidth, graphHeight: graphHeight);
         yLabelView = UIView();
         xLabelView = UIView();
         yPadding = 0;
