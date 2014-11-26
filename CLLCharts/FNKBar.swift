@@ -1,21 +1,21 @@
 //
-//  CLLBar.swift
-//  CLLCharts
+//  FNKBar.swift
+//  FNKCharts
 //
 //  Created by Phillip Connaughton on 11/23/14.
-//  Copyright (c) 2014 cll. All rights reserved.
+//  Copyright (c) 2014 FitnessKeeper inc. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class CLLBar: UIView {
+class FNKBar: UIView {
     
     var adjustmentHeight: CGFloat = 5.0
     var originalFrame : CGRect?
-    var data : CLLBarOverlayData
+    var data : FNKBarOverlayData
     
-    init(data : CLLBarOverlayData, frame : CGRect)
+    init(data : FNKBarOverlayData, frame : CGRect)
     {
         self.data = data
         super.init(frame: frame)

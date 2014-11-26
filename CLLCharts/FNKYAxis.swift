@@ -1,15 +1,15 @@
 //
-//  CLLYAxis.swift
-//  CLLCharts
+//  FNKYAxis.swift
+//  FNKCharts
 //
 //  Created by Phillip Connaughton on 11/21/14.
-//  Copyright (c) 2014 cll. All rights reserved.
+//  Copyright (c) 2014 FitnessKeeper inc. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class CLLYAxis : CLLAxis {
+class FNKYAxis : FNKAxis {
     
     var yAxisNum : CGFloat = 0;
     
@@ -45,11 +45,11 @@ class CLLYAxis : CLLAxis {
             
             bezPath.moveToPoint(CGPointMake(xVal, yVal));
             
-            if(tickType == CLLTickType.Outside)
+            if(tickType == FNKTickType.Outside)
             {
                 bezPath.addLineToPoint(CGPointMake(xVal - 3.0, yVal));
             }
-            else if(tickType == CLLTickType.Behind)
+            else if(tickType == FNKTickType.Behind)
             {
                 bezPath.addLineToPoint(CGPointMake(xVal + graphWidth, yVal));
             }

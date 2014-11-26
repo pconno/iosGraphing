@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  CLLCharts
+//  FNKCharts
 //
 //  Created by Phillip Connaughton on 11/20/14.
-//  Copyright (c) 2014 cll. All rights reserved.
+//  Copyright (c) 2014 FitnessKeeper inc. All rights reserved.
 //
 
 import UIKit

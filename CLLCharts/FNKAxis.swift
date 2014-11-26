@@ -1,19 +1,19 @@
 //
-//  CLLAxis.swift
-//  CLLCharts
+//  FNKAxis.swift
+//  FNKCharts
 //
 //  Created by Phillip Connaughton on 11/21/14.
-//  Copyright (c) 2014 cll. All rights reserved.
+//  Copyright (c) 2014 FitnessKeeper inc. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-enum CLLTickType {
+enum FNKTickType {
     case Outside, Behind
 }
 
-class CLLAxis : NSObject {
+class FNKAxis : NSObject {
     
     //Graph Sizes
     var marginLeft : CGFloat;
@@ -24,7 +24,7 @@ class CLLAxis : NSObject {
     var graphWidth : CGFloat;
     var scaleFactor : CGFloat!;
     
-    var tickType : CLLTickType = CLLTickType.Outside;
+    var tickType : FNKTickType = FNKTickType.Outside;
     
     var ticks: Int = 5;
     var fillColor : CGColor = UIColor.blackColor().CGColor;

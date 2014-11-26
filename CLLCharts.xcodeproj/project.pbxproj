@@ -7,23 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3D153E2B1A23D61A004F7B72 /* CLLBarOverlayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D153E2A1A23D61A004F7B72 /* CLLBarOverlayData.swift */; };
-		3D166EAC1A22D72F00DE10FD /* CLLChartOverlayBars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D166EAB1A22D72F00DE10FD /* CLLChartOverlayBars.swift */; };
-		3D166EAE1A22D74B00DE10FD /* CLLChartOverlayBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D166EAD1A22D74B00DE10FD /* CLLChartOverlayBase.swift */; };
+		3D153E2B1A23D61A004F7B72 /* FNKBarOverlayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D153E2A1A23D61A004F7B72 /* FNKBarOverlayData.swift */; };
+		3D166EAC1A22D72F00DE10FD /* FNKChartOverlayBars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D166EAB1A22D72F00DE10FD /* FNKChartOverlayBars.swift */; };
+		3D166EAE1A22D74B00DE10FD /* FNKChartOverlayBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D166EAD1A22D74B00DE10FD /* FNKChartOverlayBase.swift */; };
 		3D5CADA51A1FCCCE00814E08 /* ChartsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D5CADA41A1FCCCE00814E08 /* ChartsViewController.xib */; };
-		3D7AE2171A2245AD00A074D8 /* CLLBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7AE2161A2245AD00A074D8 /* CLLBar.swift */; };
+		3D7AE2171A2245AD00A074D8 /* FNKBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7AE2161A2245AD00A074D8 /* FNKBar.swift */; };
 		3DF1129C1A1EA09200AE762A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF1129B1A1EA09200AE762A /* AppDelegate.swift */; };
 		3DF1129E1A1EA09200AE762A /* ChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF1129D1A1EA09200AE762A /* ChartsViewController.swift */; };
 		3DF112A11A1EA09200AE762A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DF1129F1A1EA09200AE762A /* Main.storyboard */; };
 		3DF112A31A1EA09200AE762A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DF112A21A1EA09200AE762A /* Images.xcassets */; };
 		3DF112A61A1EA09200AE762A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DF112A41A1EA09200AE762A /* LaunchScreen.xib */; };
 		3DF112B21A1EA09200AE762A /* CLLChartsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF112B11A1EA09200AE762A /* CLLChartsTests.swift */; };
-		3DF112BD1A1EA19800AE762A /* CLLChartsLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF112BC1A1EA19800AE762A /* CLLChartsLine.swift */; };
 		3DF112BF1A1EC0AD00AE762A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF112BE1A1EC0AD00AE762A /* MainViewController.swift */; };
-		3DF112C31A1F75FD00AE762A /* CLLChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF112C21A1F75FD00AE762A /* CLLChart.swift */; };
-		3DF112C51A1F760E00AE762A /* CLLXAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF112C41A1F760E00AE762A /* CLLXAxis.swift */; };
-		3DF112C71A1F761800AE762A /* CLLYAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF112C61A1F761800AE762A /* CLLYAxis.swift */; };
-		3DF112C91A1F7A4600AE762A /* CLLAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF112C81A1F7A4600AE762A /* CLLAxis.swift */; };
+		3DF112C31A1F75FD00AE762A /* FNKChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF112C21A1F75FD00AE762A /* FNKChart.swift */; };
+		3DF112C51A1F760E00AE762A /* FNKXAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF112C41A1F760E00AE762A /* FNKXAxis.swift */; };
+		3DF112C71A1F761800AE762A /* FNKYAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF112C61A1F761800AE762A /* FNKYAxis.swift */; };
+		3DF112C91A1F7A4600AE762A /* FNKAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF112C81A1F7A4600AE762A /* FNKAxis.swift */; };
 		3DF112CB1A1F869B00AE762A /* CLLLineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF112CA1A1F869B00AE762A /* CLLLineChart.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,11 +37,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3D153E2A1A23D61A004F7B72 /* CLLBarOverlayData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLBarOverlayData.swift; sourceTree = "<group>"; };
-		3D166EAB1A22D72F00DE10FD /* CLLChartOverlayBars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLChartOverlayBars.swift; sourceTree = "<group>"; };
-		3D166EAD1A22D74B00DE10FD /* CLLChartOverlayBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLChartOverlayBase.swift; sourceTree = "<group>"; };
+		3D153E2A1A23D61A004F7B72 /* FNKBarOverlayData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FNKBarOverlayData.swift; sourceTree = "<group>"; };
+		3D166EAB1A22D72F00DE10FD /* FNKChartOverlayBars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FNKChartOverlayBars.swift; sourceTree = "<group>"; };
+		3D166EAD1A22D74B00DE10FD /* FNKChartOverlayBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FNKChartOverlayBase.swift; sourceTree = "<group>"; };
 		3D5CADA41A1FCCCE00814E08 /* ChartsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChartsViewController.xib; sourceTree = "<group>"; };
-		3D7AE2161A2245AD00A074D8 /* CLLBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLBar.swift; sourceTree = "<group>"; };
+		3D7AE2161A2245AD00A074D8 /* FNKBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FNKBar.swift; sourceTree = "<group>"; };
 		3DF112961A1EA09200AE762A /* CLLCharts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CLLCharts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DF1129A1A1EA09200AE762A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3DF1129B1A1EA09200AE762A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -53,12 +52,11 @@
 		3DF112AB1A1EA09200AE762A /* CLLChartsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CLLChartsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DF112B01A1EA09200AE762A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3DF112B11A1EA09200AE762A /* CLLChartsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLChartsTests.swift; sourceTree = "<group>"; };
-		3DF112BC1A1EA19800AE762A /* CLLChartsLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLChartsLine.swift; sourceTree = "<group>"; };
 		3DF112BE1A1EC0AD00AE762A /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		3DF112C21A1F75FD00AE762A /* CLLChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLChart.swift; sourceTree = "<group>"; };
-		3DF112C41A1F760E00AE762A /* CLLXAxis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLXAxis.swift; sourceTree = "<group>"; };
-		3DF112C61A1F761800AE762A /* CLLYAxis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLYAxis.swift; sourceTree = "<group>"; };
-		3DF112C81A1F7A4600AE762A /* CLLAxis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLAxis.swift; sourceTree = "<group>"; };
+		3DF112C21A1F75FD00AE762A /* FNKChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FNKChart.swift; sourceTree = "<group>"; };
+		3DF112C41A1F760E00AE762A /* FNKXAxis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FNKXAxis.swift; sourceTree = "<group>"; };
+		3DF112C61A1F761800AE762A /* FNKYAxis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FNKYAxis.swift; sourceTree = "<group>"; };
+		3DF112C81A1F7A4600AE762A /* FNKAxis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FNKAxis.swift; sourceTree = "<group>"; };
 		3DF112CA1A1F869B00AE762A /* CLLLineChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLLineChart.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,7 +81,7 @@
 		3D153E291A23D5B6004F7B72 /* Chart Data */ = {
 			isa = PBXGroup;
 			children = (
-				3D153E2A1A23D61A004F7B72 /* CLLBarOverlayData.swift */,
+				3D153E2A1A23D61A004F7B72 /* FNKBarOverlayData.swift */,
 			);
 			name = "Chart Data";
 			sourceTree = "<group>";
@@ -91,9 +89,9 @@
 		3D166EAA1A22D70E00DE10FD /* Chart Overlay */ = {
 			isa = PBXGroup;
 			children = (
-				3D7AE2161A2245AD00A074D8 /* CLLBar.swift */,
-				3D166EAB1A22D72F00DE10FD /* CLLChartOverlayBars.swift */,
-				3D166EAD1A22D74B00DE10FD /* CLLChartOverlayBase.swift */,
+				3D7AE2161A2245AD00A074D8 /* FNKBar.swift */,
+				3D166EAB1A22D72F00DE10FD /* FNKChartOverlayBars.swift */,
+				3D166EAD1A22D74B00DE10FD /* FNKChartOverlayBase.swift */,
 			);
 			name = "Chart Overlay";
 			sourceTree = "<group>";
@@ -126,7 +124,6 @@
 				3DF112A21A1EA09200AE762A /* Images.xcassets */,
 				3DF112A41A1EA09200AE762A /* LaunchScreen.xib */,
 				3DF112991A1EA09200AE762A /* Supporting Files */,
-				3DF112BC1A1EA19800AE762A /* CLLChartsLine.swift */,
 				3DF112BE1A1EC0AD00AE762A /* MainViewController.swift */,
 				3D5CADA41A1FCCCE00814E08 /* ChartsViewController.xib */,
 			);
@@ -172,7 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				3D166EAA1A22D70E00DE10FD /* Chart Overlay */,
-				3DF112C21A1F75FD00AE762A /* CLLChart.swift */,
+				3DF112C21A1F75FD00AE762A /* FNKChart.swift */,
 				3DF112CA1A1F869B00AE762A /* CLLLineChart.swift */,
 			);
 			name = Chart;
@@ -181,9 +178,9 @@
 		3DF112CD1A1F86B200AE762A /* Axii */ = {
 			isa = PBXGroup;
 			children = (
-				3DF112C41A1F760E00AE762A /* CLLXAxis.swift */,
-				3DF112C61A1F761800AE762A /* CLLYAxis.swift */,
-				3DF112C81A1F7A4600AE762A /* CLLAxis.swift */,
+				3DF112C41A1F760E00AE762A /* FNKXAxis.swift */,
+				3DF112C61A1F761800AE762A /* FNKYAxis.swift */,
+				3DF112C81A1F7A4600AE762A /* FNKAxis.swift */,
 			);
 			name = Axii;
 			sourceTree = "<group>";
@@ -289,18 +286,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3DF112C91A1F7A4600AE762A /* CLLAxis.swift in Sources */,
-				3DF112BD1A1EA19800AE762A /* CLLChartsLine.swift in Sources */,
-				3D166EAE1A22D74B00DE10FD /* CLLChartOverlayBase.swift in Sources */,
-				3DF112C51A1F760E00AE762A /* CLLXAxis.swift in Sources */,
-				3D153E2B1A23D61A004F7B72 /* CLLBarOverlayData.swift in Sources */,
+				3DF112C91A1F7A4600AE762A /* FNKAxis.swift in Sources */,
+				3D166EAE1A22D74B00DE10FD /* FNKChartOverlayBase.swift in Sources */,
+				3DF112C51A1F760E00AE762A /* FNKXAxis.swift in Sources */,
+				3D153E2B1A23D61A004F7B72 /* FNKBarOverlayData.swift in Sources */,
 				3DF112CB1A1F869B00AE762A /* CLLLineChart.swift in Sources */,
 				3DF1129E1A1EA09200AE762A /* ChartsViewController.swift in Sources */,
-				3D7AE2171A2245AD00A074D8 /* CLLBar.swift in Sources */,
-				3D166EAC1A22D72F00DE10FD /* CLLChartOverlayBars.swift in Sources */,
-				3DF112C31A1F75FD00AE762A /* CLLChart.swift in Sources */,
+				3D7AE2171A2245AD00A074D8 /* FNKBar.swift in Sources */,
+				3D166EAC1A22D72F00DE10FD /* FNKChartOverlayBars.swift in Sources */,
+				3DF112C31A1F75FD00AE762A /* FNKChart.swift in Sources */,
 				3DF1129C1A1EA09200AE762A /* AppDelegate.swift in Sources */,
-				3DF112C71A1F761800AE762A /* CLLYAxis.swift in Sources */,
+				3DF112C71A1F761800AE762A /* FNKYAxis.swift in Sources */,
 				3DF112BF1A1EC0AD00AE762A /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

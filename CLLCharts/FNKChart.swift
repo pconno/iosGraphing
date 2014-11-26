@@ -1,24 +1,24 @@
 //
-//  CLLChart.swift
-//  CLLCharts
+//  FNKChart.swift
+//  Charts
 //
 //  Created by Phillip Connaughton on 11/21/14.
-//  Copyright (c) 2014 cll. All rights reserved.
+//  Copyright (c) 2014 FNK. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class CLLChart : NSObject {
-    var xAxis :CLLXAxis;
-    var yAxis :CLLYAxis;
+class FNKChart : NSObject {
+    var xAxis :FNKXAxis;
+    var yAxis :FNKYAxis;
     var yLabelView : UIView;
     var xLabelView : UIView;
     var yPadding : CGFloat;
     
     init(marginLeft : CGFloat, marginRight : CGFloat, marginTop : CGFloat, marginBottom: CGFloat, graphWidth : CGFloat, graphHeight : CGFloat) {
-        xAxis = CLLXAxis(marginLeft: marginLeft, marginRight: marginRight, marginTop: marginTop, marginBottom: marginBottom, graphWidth: graphWidth, graphHeight: graphHeight);
-        yAxis = CLLYAxis(marginLeft: marginLeft, marginRight: marginRight, marginTop: marginTop, marginBottom: marginBottom, graphWidth: graphWidth, graphHeight: graphHeight);
+        xAxis = FNKXAxis(marginLeft: marginLeft, marginRight: marginRight, marginTop: marginTop, marginBottom: marginBottom, graphWidth: graphWidth, graphHeight: graphHeight);
+        yAxis = FNKYAxis(marginLeft: marginLeft, marginRight: marginRight, marginTop: marginTop, marginBottom: marginBottom, graphWidth: graphWidth, graphHeight: graphHeight);
         yLabelView = UIView();
         xLabelView = UIView();
         yPadding = 0;

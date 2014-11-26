@@ -1,15 +1,15 @@
 //
-//  CLLLineChart.swift
-//  CLLCharts
+//  FNKLineChart.swift
+//  FNKCharts
 //
 //  Created by Phillip Connaughton on 11/21/14.
-//  Copyright (c) 2014 cll. All rights reserved.
+//  Copyright (c) 2014 FNK. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class CLLLineChart : CLLChart {
+class FNKLineChart : FNKChart {
     
     var lineFillColor : CGColor = UIColor.clearColor().CGColor;
     var lineStrokeColor : CGColor = UIColor.blueColor().CGColor;

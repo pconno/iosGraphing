@@ -1,16 +1,16 @@
 //
 //  ViewController.swift
-//  CLLCharts
+//  FNKCharts
 //
 //  Created by Phillip Connaughton on 11/20/14.
-//  Copyright (c) 2014 cll. All rights reserved.
+//  Copyright (c) 2014 FNK. All rights reserved.
 //
 
 import UIKit
 
 protocol ChartsViewDelegate {
     func touchedGraph(chart : ChartsViewController , val : CGFloat)
-    func touchedBar(chart : ChartsViewController , data : CLLBarOverlayData)
+    func touchedBar(chart : ChartsViewController , data : FNKBarOverlayData)
 }
 
 class ChartsViewController: UIViewController {
@@ -34,10 +34,10 @@ class ChartsViewController: UIViewController {
     
     var drawBars : Bool;
     
-    var chart: CLLLineChart;
+    var chart: FNKLineChart;
     
     var delegate: ChartsViewDelegate?;
-    var chartOverlay : CLLChartOverlayBars?
+    var chartOverlay : FNKChartOverlayBars?
     
     convenience init(frame : CGRect)
     {
@@ -57,7 +57,7 @@ class ChartsViewController: UIViewController {
         self.yPadding = yPadding;
         self.drawBars = false
         
-        chart = CLLLineChart(marginLeft: marginLeft, marginRight: marginRight, marginTop: marginTop, marginBottom: marginBottom, graphWidth: graphWidth, graphHeight: graphHeight);
+        chart = FNKLineChart(marginLeft: marginLeft, marginRight: marginRight, marginTop: marginTop, marginBottom: marginBottom, graphWidth: graphWidth, graphHeight: graphHeight);
         
         
         self.graphWidth = rect.width - self.marginRight - self.marginLeft;
@@ -86,7 +86,7 @@ class ChartsViewController: UIViewController {
         self.view.addGestureRecognizer(tapGesture)
     }
     
-    func addChartOverlay(chartOverlay : CLLChartOverlayBars)
+    func addChartOverlay(chartOverlay : FNKChartOverlayBars)
     {
         self.chartOverlay = chartOverlay
         self.chartOverlay?.marginBottom = marginBottom
@@ -116,7 +116,6 @@ class ChartsViewController: UIViewController {
         dispatch_after(time, dispatch_get_main_queue()) { () -> Void in
             self.loadData();
         };
-        
     }
     
     func loadData()
@@ -134,8 +133,7 @@ class ChartsViewController: UIViewController {
             chart.yLabelView.userInteractionEnabled = false
         }
     }
-        
-    
+            
     func drawPoints() ->CALayer
     {
         var firstPoint: Bool = true;

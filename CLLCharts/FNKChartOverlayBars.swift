@@ -1,15 +1,15 @@
 //
-//  CLLChartOverlayBars.swift
-//  CLLCharts
+//  FNKChartOverlayBars.swift
+//  FNKCharts
 //
 //  Created by Phillip Connaughton on 11/23/14.
-//  Copyright (c) 2014 cll. All rights reserved.
+//  Copyright (c) 2014 FitnessKeeper inc. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class CLLChartOverlayBars : CLLChartOverlayBase {
+class FNKChartOverlayBars : FNKChartOverlayBase {
 
     var dataSet : NSArray?
     var barsArray : NSMutableArray?
@@ -22,8 +22,8 @@ class CLLChartOverlayBars : CLLChartOverlayBase {
         var bars = dataSet?.count
         for index in 0...bars!-1
         {
-            var data : CLLBarOverlayData = dataSet?.objectAtIndex(index) as CLLBarOverlayData
-            var barView : CLLBar = CLLBar(data: data, frame: CGRectMake(data.x + marginLeft!, graphHeight! + marginTop!, data.width!, 0))
+            var data : FNKBarOverlayData = dataSet?.objectAtIndex(index) as FNKBarOverlayData
+            var barView : FNKBar = FNKBar(data: data, frame: CGRectMake(data.x + marginLeft!, graphHeight! + marginTop!, data.width!, 0))
             barView.backgroundColor = randomColor()
             barView.alpha = 0.1
             view.insertSubview(barView, atIndex: 6)
@@ -54,10 +54,10 @@ class CLLChartOverlayBars : CLLChartOverlayBase {
     {
         if let dSet = dataSet
         {
-            var prevBarData : CLLBarOverlayData?
+            var prevBarData : FNKBarOverlayData?
             for data in dSet
             {
-                var barData : CLLBarOverlayData = data as CLLBarOverlayData
+                var barData : FNKBarOverlayData = data as FNKBarOverlayData
                 
                 barData.x = barData.x * self.scale!
                 
@@ -77,14 +77,14 @@ class CLLChartOverlayBars : CLLChartOverlayBase {
         }
     }
     
-    func touchAtPoint(point : CGPoint, view : UIView) -> CLLBarOverlayData?
+    func touchAtPoint(point : CGPoint, view : UIView) -> FNKBarOverlayData?
     {
-        var touchedData : CLLBarOverlayData?
+        var touchedData : FNKBarOverlayData?
         if let bArray = barsArray
         {
             for barView in bArray
             {
-                var bView : CLLBar = barView as CLLBar
+                var bView : FNKBar = barView as FNKBar
                 var cPoint = view.convertPoint(point, toView: bView)
                 var expand : Bool = bView.pointInside(cPoint, withEvent: nil)
                 
