@@ -8,14 +8,14 @@
 
 import UIKit
 
-class MainViewController: UIViewController, ChartsViewDelegate {
+class MainViewController: UIViewController, FNKChartsViewDelegate {
     @IBOutlet var paceLabel: UILabel!
     @IBOutlet var songLabel: UILabel!
     @IBOutlet var albumImage: UIImageView!
     @IBOutlet var elevationLabel: UILabel!
     
-    var paceChartsVC : ChartsViewController!
-    var elevationChartsVC : ChartsViewController!
+    var paceChartsVC : FNKChartsViewController!
+    var elevationChartsVC : FNKChartsViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad();
@@ -27,7 +27,7 @@ class MainViewController: UIViewController, ChartsViewDelegate {
     
     func addPaceChart()
     {
-        paceChartsVC = ChartsViewController(frame: CGRectMake(0, 70, 320, 160));
+        paceChartsVC = FNKChartsViewController(frame: CGRectMake(0, 70, 320, 160));
         paceChartsVC.dataPointArray = addPointsPaceByDistance();
         paceChartsVC.yPadding = 30;
         
@@ -67,7 +67,7 @@ class MainViewController: UIViewController, ChartsViewDelegate {
     
     func addElevationChart()
     {
-        elevationChartsVC = ChartsViewController(frame: CGRectMake(0, 320, 280, 160));
+        elevationChartsVC = FNKChartsViewController(frame: CGRectMake(0, 320, 320, 160));
 //        elevationChartsVC.view.frame = CGRectMake(0, 320, 320, 160);
         elevationChartsVC.dataPointArray = addPointsElevationByDistance();
         elevationChartsVC.yPadding = 0;
@@ -140,7 +140,7 @@ class MainViewController: UIViewController, ChartsViewDelegate {
         }
     }
     
-    func touchedGraph(chart : ChartsViewController ,val : CGFloat)
+    func touchedGraph(chart : FNKChartsViewController ,val : CGFloat)
     {
         if(chart.isEqual(paceChartsVC))
         {
@@ -152,7 +152,7 @@ class MainViewController: UIViewController, ChartsViewDelegate {
         }
     }
     
-    func touchedBar(chart : ChartsViewController , data : FNKBarOverlayData)
+    func touchedBar(chart : FNKChartsViewController , data : FNKBarOverlayData)
     {
         songLabel.text = NSString(format: "%@ - %@", data.data["artist"] as NSString , data.data["title"] as NSString)
         showSong(true)

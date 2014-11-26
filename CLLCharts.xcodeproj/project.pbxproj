@@ -13,7 +13,7 @@
 		3D5CADA51A1FCCCE00814E08 /* ChartsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D5CADA41A1FCCCE00814E08 /* ChartsViewController.xib */; };
 		3D7AE2171A2245AD00A074D8 /* FNKBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7AE2161A2245AD00A074D8 /* FNKBar.swift */; };
 		3DF1129C1A1EA09200AE762A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF1129B1A1EA09200AE762A /* AppDelegate.swift */; };
-		3DF1129E1A1EA09200AE762A /* ChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF1129D1A1EA09200AE762A /* ChartsViewController.swift */; };
+		3DF1129E1A1EA09200AE762A /* FNKChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF1129D1A1EA09200AE762A /* FNKChartsViewController.swift */; };
 		3DF112A11A1EA09200AE762A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DF1129F1A1EA09200AE762A /* Main.storyboard */; };
 		3DF112A31A1EA09200AE762A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DF112A21A1EA09200AE762A /* Images.xcassets */; };
 		3DF112A61A1EA09200AE762A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DF112A41A1EA09200AE762A /* LaunchScreen.xib */; };
@@ -45,7 +45,7 @@
 		3DF112961A1EA09200AE762A /* CLLCharts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CLLCharts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DF1129A1A1EA09200AE762A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3DF1129B1A1EA09200AE762A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3DF1129D1A1EA09200AE762A /* ChartsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsViewController.swift; sourceTree = "<group>"; };
+		3DF1129D1A1EA09200AE762A /* FNKChartsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FNKChartsViewController.swift; sourceTree = "<group>"; };
 		3DF112A01A1EA09200AE762A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3DF112A21A1EA09200AE762A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3DF112A51A1EA09200AE762A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -119,7 +119,7 @@
 			children = (
 				3DF112C11A1F75EF00AE762A /* Chart */,
 				3DF1129B1A1EA09200AE762A /* AppDelegate.swift */,
-				3DF1129D1A1EA09200AE762A /* ChartsViewController.swift */,
+				3DF1129D1A1EA09200AE762A /* FNKChartsViewController.swift */,
 				3DF1129F1A1EA09200AE762A /* Main.storyboard */,
 				3DF112A21A1EA09200AE762A /* Images.xcassets */,
 				3DF112A41A1EA09200AE762A /* LaunchScreen.xib */,
@@ -291,7 +291,7 @@
 				3DF112C51A1F760E00AE762A /* FNKXAxis.swift in Sources */,
 				3D153E2B1A23D61A004F7B72 /* FNKBarOverlayData.swift in Sources */,
 				3DF112CB1A1F869B00AE762A /* CLLLineChart.swift in Sources */,
-				3DF1129E1A1EA09200AE762A /* ChartsViewController.swift in Sources */,
+				3DF1129E1A1EA09200AE762A /* FNKChartsViewController.swift in Sources */,
 				3D7AE2171A2245AD00A074D8 /* FNKBar.swift in Sources */,
 				3D166EAC1A22D72F00DE10FD /* FNKChartOverlayBars.swift in Sources */,
 				3DF112C31A1F75FD00AE762A /* FNKChart.swift in Sources */,

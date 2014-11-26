@@ -8,12 +8,12 @@
 
 import UIKit
 
-protocol ChartsViewDelegate {
-    func touchedGraph(chart : ChartsViewController , val : CGFloat)
-    func touchedBar(chart : ChartsViewController , data : FNKBarOverlayData)
+protocol FNKChartsViewDelegate {
+    func touchedGraph(chart : FNKChartsViewController , val : CGFloat)
+    func touchedBar(chart : FNKChartsViewController , data : FNKBarOverlayData)
 }
 
-class ChartsViewController: UIViewController {
+class FNKChartsViewController: UIViewController {
     
     var dataPointArray: Array<CGPoint> = [];
     var marginLeft: CGFloat
@@ -36,7 +36,7 @@ class ChartsViewController: UIViewController {
     
     var chart: FNKLineChart;
     
-    var delegate: ChartsViewDelegate?;
+    var delegate: FNKChartsViewDelegate?;
     var chartOverlay : FNKChartOverlayBars?
     
     convenience init(frame : CGRect)
