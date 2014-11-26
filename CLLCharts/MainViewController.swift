@@ -28,7 +28,6 @@ class MainViewController: UIViewController, ChartsViewDelegate {
     func addPaceChart()
     {
         paceChartsVC = ChartsViewController(frame: CGRectMake(0, 70, 320, 160));
-//        paceChartsVC.view.frame = CGRectMake(0, 70, 320, 160);
         paceChartsVC.dataPointArray = addPointsPaceByDistance();
         paceChartsVC.yPadding = 30;
         

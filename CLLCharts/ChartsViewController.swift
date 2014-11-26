@@ -123,6 +123,7 @@ class ChartsViewController: UIViewController {
         self.dataPointArray = normalizePoints(dataPointArray);
         chart.xAxis.scaleFactor = xScaleFactor
         chart.yAxis.scaleFactor = yScaleFactor
+        chart.yAxis.yAxisNum = yAxisNum!
         self.chartOverlay?.scale = xScaleFactor
         chart.draw(self.view);
         var line = drawPoints();
