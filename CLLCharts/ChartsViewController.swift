@@ -41,7 +41,7 @@ class ChartsViewController: UIViewController {
     
     convenience init(frame : CGRect)
     {
-        self.init(rect: frame,marginLeft : 20, marginRight : 20, marginTop : 5, marginBottom : 5, graphWidth: 300, graphHeight : 160, yPadding : 0)
+        self.init(rect: frame,marginLeft : 10, marginRight : 10, marginTop : 5, marginBottom : 5, graphWidth: 300, graphHeight : 160, yPadding : 0)
     }
     
     init(rect : CGRect, marginLeft : CGFloat, marginRight : CGFloat, marginTop : CGFloat, marginBottom : CGFloat, graphWidth : CGFloat, graphHeight : CGFloat, yPadding : CGFloat)
@@ -57,11 +57,10 @@ class ChartsViewController: UIViewController {
         self.yPadding = yPadding;
         self.drawBars = false
         
-        chart = FNKLineChart(marginLeft: marginLeft, marginRight: marginRight, marginTop: marginTop, marginBottom: marginBottom, graphWidth: graphWidth, graphHeight: graphHeight);
-        
-        
         self.graphWidth = rect.width - self.marginRight - self.marginLeft;
         self.graphHeight = rect.size.height - self.marginTop - self.marginBottom;
+        
+        chart = FNKLineChart(marginLeft: marginLeft, marginRight: marginRight, marginTop: marginTop, marginBottom: marginBottom, graphWidth: self.graphWidth, graphHeight: self.graphHeight);
         
         super.init(nibName: nil, bundle: nil);
         

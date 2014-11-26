@@ -67,7 +67,7 @@ class MainViewController: UIViewController, ChartsViewDelegate {
     
     func addElevationChart()
     {
-        elevationChartsVC = ChartsViewController(frame: CGRectMake(0, 320, 320, 160));
+        elevationChartsVC = ChartsViewController(frame: CGRectMake(0, 320, 280, 160));
 //        elevationChartsVC.view.frame = CGRectMake(0, 320, 320, 160);
         elevationChartsVC.dataPointArray = addPointsElevationByDistance();
         elevationChartsVC.yPadding = 0;
